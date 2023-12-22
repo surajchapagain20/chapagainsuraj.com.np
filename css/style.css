@@ -1,0 +1,206 @@
+/* CSS Document */
+/*FONT CHANGE */
+@import url(http://fonts.googleapis.com/css?family=Cinzel+Decorative:400,900);
+body {
+  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+/*  font-family: 'Cinzel Decorative', cursive;*/
+  background-size: cover;
+  color: white;
+}
+.subtitle {
+  margin: 0 0 1em 0;
+}
+.fancy {
+  line-height: 0.5;
+  text-align: center;
+}
+h2 {
+	text-shadow: 2px 2px 2px #CCCCCC;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+/*FONT CHANGE */
+body {
+	/*background-image:url(../images/IMG_7024.JPG);
+	background-repeat: repeat-y;*/
+	background-color:#64abfb;
+	height:500px;
+	width:auto;
+	background: #369;
+	height:500px;
+	width:auto;
+	font-size:20px;
+	line-height: 32px;
+	color: #000;
+	word-wrap:break-word !important;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+/*	font-family: Cambria, "Hoefler Text", "Liberation Serif", serif;
+	font-family: 'Cinzel Decorative', cursive;*/
+/*	src: url('font/SansationLight.ttf'); 
+	src: url('font/SansationLight.woff');*/
+	padding: 10px;
+	}
+
+
+h1 {
+	font-size: 40px;
+	text-align: left;
+	color: #FFF;
+}	
+
+h3 {
+	font-size: 30px;
+	color: #FFF;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+
+#container {
+	width:94%;
+	margin:0;
+	font-size:20px;
+	line-height:33px;
+	}
+
+#content {
+	padding: 20px;
+}
+
+nav {
+background-color:#036;
+display: block;
+max-width:100%;
+clear: both;
+/*border: 5px solid #036;   VOR BODER CREATER*/ 
+}
+
+nav li {
+list-style:none !important;
+color:#FFF;
+padding:10px;
+font-size:18px;
+text-decoration:none;
+display: inline-block;
+}
+
+nav li a {
+		/*font-family: 'Cinzel Decorative', cursive;*/
+		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+		font-weight: bold;
+	}
+ 
+nav ul {
+padding:0;
+margin:0;
+}
+ 
+nav ul li {
+list-style: none;
+line-height:44px;
+background-color:#036;
+}
+ 
+nav ul li a {
+color:#FFF;
+padding:10px;
+font-size:20px;
+text-decoration:none;
+}
+ 
+li a:hover {
+border-bottom:3px #FFF solid;
+}
+nav ul li ul { display:none; } /* Makes the Dropdown menu Hidden by default */
+ 
+nav ul li:hover ul { /* Displayes the dropNav when Hovered over the nav item with the .drop class */
+z-index:99999;
+display:list-item !important;
+position:absolute;
+margin-top:5px;
+margin-left:30px;
+}
+ 
+nav ul li:hover ul li {
+float:none;
+}
+
+li > a:after { content: '»'; } /* Change this in order to change the Dropdown symbol */
+ 
+li > a:only-child:after { content: ''; }
+
+.active {
+	background-color:#069;
+	}
+
+#relatedContent {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+#relatedContent .item {
+  max-width: 44%;
+  padding: 3%;
+  float: left;
+  text-align: left;
+}
+
+#relatedContent .item a img {
+  max-width: 100%;
+}		
+/*-----------------------------------SIDE-----------------------------------*/
+
+#SIDE{
+	clear:both;
+	width:110px;
+	height:auto;
+	background-color:rgb(0,204,255);
+	background-color:rgba(0,204,255,0.6);
+	border-radius:0px 20px 20px 0px ;
+	position:fixed;
+	top:56%;
+	left:0;
+	padding:10px 10px 10px 45px;
+	z-index:9999;
+	}
+	
+#SIDE ul{
+	list-style:none;
+	}
+	
+#SIDE li{
+	display:block;
+	width:52px;
+	height:52px;
+	border-top:1px solid #FFF;
+	}	
+	
+#SIDE li:first-child {
+	border-top:none;
+	}	
+	
+#SIDE li a{
+	display:block;
+	width:42px;
+	height:52px;
+	background-position:center 4px;
+	background-repeat:no-repeat;
+	}	
+	
+#SIDE li .fb{ background-image:url(images/desktop/FB_link.png);}	
+#SIDE li .yt{ background-image:url(images/desktop/yotube_link.png);}	
+#SIDE li .tw{ background-image:url(images/desktop/tw_link.png);}
+#SIDE li .shop{background-image:url(images/desktop/shop_link.png);}	
+
+#SIDE li .fb:hover{ background-image:url(images/desktop/FB_link_R.png);}	
+#SIDE li .yt:hover{ background-image:url(images/desktop/yotube_link_R.png);}	
+#SIDE li .tw:hover{ background-image:url(images/desktop/tw_link_R.png);}
+#SIDE li .shop:hover{background-image:url(images/desktop/shop_link_R.png);}	
+
+/*-------------------------------------------SIDE-------------------------------------------*/
