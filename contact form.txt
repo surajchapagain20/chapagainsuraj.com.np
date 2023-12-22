@@ -1,0 +1,272 @@
+HTML CODE
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>CHD Home Page</title> 
+
+<link rel="stylesheet" type="text/css" href="css/style.css"/> 
+<link rel="stylesheet" type="text/css" href="css/menu.css"/> 
+
+</head> 
+
+<body> 
+
+<div id="top"></div> 
+
+<div id="wrapper"> 
+     
+    <?php include('includes/head.php'); ?> 
+     
+    <?php include('includes/menu.php'); ?> 
+     
+
+     
+    <div id="banner"> 
+     
+    <img src="images/banner.jpg" /> 
+     
+    </div> 
+     
+    <div id="content"> 
+        <div id="leftpan"> 
+              
+          <?php include('includes/sidemenu.php'); ?> 
+                 
+        </div> 
+         
+        <div id="main"> 
+          <h1>Heading</h1> 
+          <form action="mail.php" method="POST" class="form"> 
+                        <p> 
+                            <label for="name">Name: *</label><br /> 
+                            <input type="text" name="name" value="<?php echo $_POST['name']; ?>"> 
+                        </p> 
+                        <p> 
+                            <label for="email">Email: *</label><br /> 
+                            <input type="text" name="email" value="<?php echo $_POST['email']; ?>"> 
+                        </p> 
+                        <p> 
+                            <label for="phone">Phone: *</label><br /> 
+                            <input type="text" name="phone" maxlength="11" value="<?php echo $_POST['phone']; ?>"> 
+                        </p> 
+                        <p> 
+                            <label for="message">Message: *</label><br /> 
+                            <textarea name="message"><?php echo $_POST['message']; ?></textarea> 
+                        <p><input type="submit" name="submit" value="Send Email"></p> 
+                    </form> 
+        </div> 
+    </div> 
+     
+    <?php include('includes/foot.php'); ?> 
+     
+
+</div> 
+
+<div id="bottom"></div> 
+<?php include('includes/developer.php'); ?> 
+</body> 
+</html>
+
+
+
+
+PHP CODE
+<?php $page = 'Contact'; 
+
+include('inc/core.php'); 
+
+$to = "gem@ismyemail.co.uk"; 
+$subject = "Your email subject line"; 
+
+if (isset($_POST['submit'])) { 
+     
+    // Error Checking 
+    $errors = array(); 
+     
+    // Name Check 
+    if (empty($_POST['name'])) { 
+        $errors[] = 'You are required to enter your name'; 
+    } 
+     
+    // Email Check 
+    if (empty($_POST['email'])) { 
+        $errors[] = 'You are required to enter your email'; 
+    } 
+     
+    // Phone Check 
+    if (empty($_POST['phone'])) { 
+        $errors[] = 'You are required to enter your phone number'; 
+    } 
+     
+    if (!empty($_POST['phone'])) { 
+        $phone_length = strlen($_POST['phone']); 
+         
+        if ($phone_length != 11) { 
+            $errors[] = 'Please enter a valid phone number'; 
+        } 
+    } 
+     
+    // Message check 
+    if (empty($_POST['message'])) { 
+        $errors[] = 'You are required to enter a message'; 
+    } 
+     
+    // If no errors - send email 
+    if (empty($errors)) { 
+         
+        $name         = htmlentities($_POST['name']); 
+        $email         = htmlentities($_POST['email']); 
+        $phone        = htmlentities($_POST['phone']); 
+         
+        $subject = 'Web Form Enquiry'; 
+     
+        $headers = "From: $email" . "\r\n"; 
+        $headers .= "Reply-To: $email" . "\r\n"; 
+        $headers .= "MIME-Version: 1.0\r\n"; 
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n"; 
+         
+        $message = $_POST['message']; 
+         
+        $message = '<html><body>'; 
+        $message .= '<div style="font: 14px Arial, sans-serif; color: #333;">'; 
+        $message .= $_POST['message']; 
+        $message .= "<hr />"; 
+        $message .= "Name: $name" . "\r\n"; 
+        $message .= "<br />"; 
+        $message .= "Phone: $phone" . "\r\n"; 
+        $message .= '</div>'; 
+        $message .= "</body></html>"; 
+         
+        // Send Email 
+        mail($to,$subject,$message,$headers); 
+         
+        // Set sent variable to allow sent message to be displayed 
+        $sent = 'Sent'; 
+         
+    } 
+     
+} 
+?> 
+
+                    <?php if (!empty($errors)) { ?> 
+                        <div class="error"> 
+                            <ul> 
+                                <?php 
+                                 
+                                foreach ($errors as $error) { 
+                                    echo '<li>'.$error.'</li>'; 
+                                } 
+                                 
+                                ?> 
+                            </ul> 
+                        </div> 
+                    <?php } ?> 
+                     
+                    <?php if(isset($sent)) { ?> 
+                        <div class="success"> 
+                            <p>Your message was sent successfully</p> 
+                        </div> 
+                    <?php } ?>
+
+
+
+CONTACT FORM CSS
+/* Contact Form */
+
+/* ----------------------------------
+#. Messages
+---------------------------------- */
+
+.error {
+	margin: 15px 0;
+	padding: 10px 0 10px 15px;
+	
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	
+	border: 1px solid #961f19;
+	
+	box-shadow: inset 0 1px 1px #ed8d88, 0 1px 3px rgba(0, 0, 0, 0.4);
+	
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #da4f49;
+	*background-color: #bd362f;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+	background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+	background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+	background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+	background-repeat: repeat-x;
+	border-color: #bd362f #bd362f #802420;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.error ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.error ul li {
+	margin: 5px 0;
+}
+
+.success {
+	padding: 10px 0 10px 15px;
+	
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	
+	border: 1px solid #10272e;
+	
+	box-shadow: inset 0 1px 1px #5f98b0, 0 1px 3px rgba(0, 0, 0, 0.4);
+	
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #da4f49;
+	*background-color: #1e3d47;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#266078), to(#1e3d47));
+	background-image: -webkit-linear-gradient(top, #266078, #1e3d47);
+	background-image: -o-linear-gradient(top, #266078, #1e3d47);
+	background-image: linear-gradient(to bottom, #266078, #1e3d47);
+	background-image: -moz-linear-gradient(top, #266078, #1e3d47);
+	background-repeat: repeat-x;
+}
+
+.success p {
+	margin: 0;
+}
+
+/* ---------------------------------------
+#. Form
+--------------------------------------- */
+
+.form {
+
+}
+
+.form input[type='text'], .form textarea {
+	padding: 5px;
+	border: 1px solid #aaa;
+}
+
+.form input[type='text'] {
+	width: 200px;
+}
+
+.form textarea {
+	width: 400px;
+	height: 100px;
+	max-height: 400px;
+	resize: vertical;
+	font-family: inherit;
+}

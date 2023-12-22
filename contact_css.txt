@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<style>
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.form{width: 300px; margin: 0 auto;}
+input[type='first_name'],[type='last_name'], input[type='email'], input[type='telephone']
+{width: 200px; border-radius: 2px;border: 1px solid #CCC; padding: 10px; color: #333; font-size: 14px; margin-top: 10px;}
+input[type='submit']{padding: 10px 25px 8px; color: #fff; background-color: #069; text-shadow: rgba(0,0,0,0.24) 0 1px 0; font-size: 16px; box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0; border: 1px solid #069; border-radius: 2px; margin-top: 10px; cursor:pointer;}
+input[type='submit']:hover {background-color: #069;}
+input[type='reset']{padding: 10px 25px 8px; color: #fff; background-color: #069; text-shadow: rgba(0,0,0,0.24) 0 1px 0; font-size: 16px; box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0; border: 1px solid #069; border-radius: 2px; margin-top: 10px; cursor:pointer;}
+input[type='reset']:hover {background-color: #069;}
+#comments{border: 1px #ccc solid; border-radius: 2px; padding: 6px 2px;}
+</style>
+</head>
+
+<body>
+
+<table width="1160" border="0">
+       <tr>
+         <th width="1150" scope="col">Please fill free to contact me.</th>
+       </tr>
+       <tr>
+         <td><p>We respect your privacy. The information provided below will only be used to reply to your request.</p>
+<form name="contactform" method="post" action="sendmail.php" ENCTYPE="multipart/form-data" onSubmit="return validateForm()">
+<table width="1136" border="1">
+<tr>
+<td width="211" valign="middle"><label for="first_name"><strong>First Name</strong> <font color="#FF0000">*</font></label></td>
+<td width="316" valign="top"><input type="first_name" name="first_name" placeholder="FIRST NAME" required size="30"/></td>
+<td width="587" valign="middle"> Suraj Chapagain</td>
+</tr>
+<tr>
+<td valign="middle"><label for="last_name"><strong>Last Name</strong> <font color="#FF0000"> *</font></label></td>
+<td valign="top"><input type="last_name" name="last_name" placeholder="LAST NAME" required size="30"/></td>
+<td valign="middle">Kumarigal-6, Kathmandu, Nepal</td>
+</tr>
+<tr>
+<td valign="middle"><label for="email"><strong>Email Address </strong><font color="#FF0000"> *</font></label></td>
+<td valign="top"><input type="email" name="email" placeholder="EMAIL" required size="30"/></td>
+<td valign="middle">Phone No: +977-1-5107099</td>
+</tr>
+<tr>
+<td valign="middle"><label for="telephone"><strong>Contact Number</strong><font color="#FF0000">*</font></label></td>
+<td valign="top"><input type="telephone" name="telephone" placeholder="TELEPHONE" required size="30"/></td>
+<td valign="middle">Cell: +977-9851136647</td>
+</tr>
+<tr>
+<td valign="middle"><label for="comments"><strong>Message<font color="#FF0000">*</font></strong></label></td>
+<td valign="top"><strong>
+<textarea id="comments" cols="35" rows="8" name="comments" placeholder="&nbsp;MESSAGE" required></textarea>
+</strong></td>
+<td valign="middle"><p>Email: <a href="mailto:suraj@surajchapagain.com.np?subject=Sweet Words
+&body=With Regards!">suraj@surajchapagain.com.np</a></p>
+  <p>Site: surajchapagain.com.np</p></td>
+</tr>
+<tr>
+<td height="36" colspan="3" style="text-align:left"><input type="submit" value="Submit" />  
+<input type="reset" value="Reset" style="text-align:center" /></td>
+</tr>
+</table>
+</form>
+<strong>Note: <font color="#FF0000">*</font> Field is Compulsory.</strong>
+</br>
+
+</p></td>
+       </tr>
+  </table>
+</body>
+</html>

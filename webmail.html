@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WEB MAIL</title>
+<link rel="shortcut icon" href="images/suraj.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style>
+				
+span.reference{
+				font-family: 'Cinzel Decorative', cursive;
+				position:fixed;
+				left:10px;
+				bottom:5px;
+				font-size:12px;
+			}
+			span.reference a{
+				color:#aaa;
+				text-transform:uppercase;
+				text-decoration:none;
+				text-shadow:1px 1px 1px #000;
+				margin-right:30px;
+			}
+			span.reference a:hover{
+				color:#ddd;
+			}
+			ul.sdt_menu{
+			ul.sdt_menu{
+				margin-top:150px;
+			}				
+				
+				.fname{
+				padding-left:26px;
+				background-image:url(images/name.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}
+				.lname{
+				padding-left:26px;
+				background-image:url(images/name.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}
+				.email {
+				padding-left:28px;
+				background-image:url(images/Email-logo.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}
+				.tel {
+				padding-left:30px;
+				background-image:url(images/telephone.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}
+				.message {
+				padding-left:30px;
+				background-image:url(images/message.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}
+				.password {
+				padding-left:30px;
+				background-image:url(images/password.png);
+				background-repeat:no-repeat;
+				background-position:6px;
+				}				
+</style>
+<script language=JavaScript> 
+	function validateForm() {
+	var x = document.forms["webform"]["user"].value;
+    if (x == null || x == "") {
+        alert("YOUR EMAIL ADDRESS PLEASE.");
+        return false;
+    }
+}
+</script>
+<script language="javascript">
+var message="Sorry Can't Do That!!!"; 
+     function clickIE4(){
+       if(event.button==2){
+          alert(message);
+          return false; 
+       }
+    } 
+    function clickNS4(e){
+      if(document.layers||document.getElementById&&!document.all){
+        if (e.which==2||e.which==3){  
+          alert(message);
+          return false; 
+        } 
+     } 
+   } 
+   if (document.layers){  
+     document.captureEvents(Event.MOUSEDOWN);
+     document.onmousedown=clickNS4;
+   } 
+   else if(document.all&&!document.getElementById){
+       document.onmousedown=clickIE4; 
+   }  
+   document.oncontextmenu=new Function("alert(message);return false")
+</script>
+<script language="javascript">
+document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'C'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+return false;
+}
+}
+</script>
+</head>
+
+<img src="images/header.JPG" height="200" width="Auto" align="left">
+
+<body id="home" oncontextmenu="return false;">
+<div id="container">
+    <nav id="nav">
+          <ul>
+            <li><a href="index.html" title="HOME">HOME</a></li>
+            
+            <li><a href="portfolio.html" title="HOME">PORTFOLIO</a></li>
+<!--            <ul><a href="collections.html">COLLECTIONS</a></ul> -->
+            
+            <li><a href="about.html">ABOUT ME</a></li>
+            
+       		<li><a href="contact.html">CONTACT ME</a></li>
+            
+           <!--   <li><a href="webmail.html">WEB MAIL</a></li>    -->         
+            
+          <li style="float:right"><a href="webmail.html">WEB MAIL</a></li>
+          							<!--<ul><a href="photo.html">PHOTOS</a></ul> -->
+        </ul>
+    </nav>
+    <section id="content">
+      
+    <h2>WEB MAIL LOGIN</h2>
+<form name="webform" action="http://webmail.surajchapagain.com.np:8080/login" method="POST" onSubmit="return validateForm()">
+<input type="hidden" name="login_theme" value="cpanel">
+<table width="372" border="1" cellpadding="1" cellspacing="1" class="login">
+<tr>
+  <td width="124" height="37"><strong>User ID<font color="#FF0000">*</font></strong></td>
+  <td width="235"><style>style="input[type='text'], input[type='email'], input[type='password'] {width: 200px; border-radius: 2px;border: 1px solid #CCC; padding: 10px; color: #333; font-size: 14px; margin-top: 10px;}"</style><input type="text" name="username" placeholder="Email Address" required size="30"/></td>
+</tr>
+
+<tr class="row2">
+<td height="37"><strong>Password</strong></td>
+<td><input name="pass" type="password" size="30"></td>
+</tr>
+<tr>
+<td height="50" colspan="2" align="center"><input type="submit" value="Login" class="input-button">
+										   <input type="reset" value="Reset" class="input-button">
+</td>
+</tr>
+<tr>
+  <td height="50" colspan="2" align="center"><strong>Note: <font color="#FF0000">*</font> Field is Compulsory.</strong></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</form>
+
+   
+
+    </section>
+
+</div>
+<!-- SIDE BAR -->
+<div id="SIDE">
+<ul>
+<li><a href="upload.html" style="background-image:url(images/upload.png); width:52px; height:52px;"></a></li>
+<li><a href="https://www.facebook.com/chapagainsuraj" style="background-image:url(images/side_fb.png); width:52px; height:52px;" 
+target="_blank"></a></li>
+<li><a href="https://twitter.com/surajch2008" style="background-image:url(images/side_tw.png); width:52px; height:52px;" 
+target="_blank"></a></li>
+<li><a href="webmail.html" style="background-image:url(images/side_web_mail.png); width:52px; height:42px;"></a></li>
+</ul>
+</div>
+<!-- SIDE BAR -->
+<!-- <div id="relatedContent">
+<h3>More Awesome Photos</h3>
+    <div class="item">
+    <a href="#">
+        <img src="relatedContent/DSC_0292.JPG" width="98" height="66" title="DINGLA">
+    </a>
+</div>
+   <div class="item"><a href="#"><img src="relatedContent/DSC_0315.jpg" width="98" height="66" title="DINGLA"></a></div>
+</div>-->
+<!-- Buttom Reference Link -->
+<div>
+<span class="reference">
+<center><strong><font color="000">
+<a href="#">Copyright SURAJ CHAPAGIAN 2016</a>
+<a href="http://surajchapagain.com.np">SURAJ CHAPAGAIN</a> 
+<a href="https://www.facebook.com/chapagainsuraj"><img src="images/Facebook.png" height="20" width="20" title="FACEBOOK"/>
+<a href="skype:phonenumber?call"><img src="images/skype.png" height="20" width="20" title="SKYPE" />                
+<a href="https://twitter.com/surajch2008"><img src="images/twitter.png" height="20" width="20" title="TWITTER" />                                
+</a></font></strong></center>
+</span>
+</div>  
+<!-- Buttom Reference Link -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/active.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+</body>
+</html>

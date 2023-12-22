@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>NEW NEWS</title>
+		<style>
+			#content{
+			width: 500px;
+			position: float;
+			top: 0%;
+			margin: 0 auto;
+			height: 100%;
+			border: black 0px solid;
+			padding: 5px;}
+			
+			#modal-box {
+			font-family: "Arial", Georgia, sans-serif;
+			position:fixed;
+			top: 50%;
+			left: 50%;
+			width:600px;
+			height: 355px;
+			margin-top: -9em; 
+			margin-left: -20em; 
+			border: 1px solid #ccc;
+			background-color: white;
+			font-color
+			z-index:9999;
+			animation:opac 1.0s;
+			
+			#close {
+			float:right;
+			display:inline-block;
+			padding:2px 2px;
+			background:#ccc;}}
+
+			//#modal-content{width:100%; height:100%; overflow-y:scroll}
+			#modal-footer{padding:5px;position:relative;bottom:0; left:0; width:100%;} 
+		</style>
+	</head>
+	
+<div id="modal-box">
+<div id="modal-content">
+<center><p><h1> Welcome To Travelling Peace Nepal Pvt. Ltd. </h1>
+<pre>
+Travelling Peace Nepal Pvt.Ltd have signed an aggrement with 
+Buddha Airlines for Ticketing all over Nepal. 
+So, For Airlines Ticket please Contact to our sales.
+
+		Sales Person
+		Suraj Chapagain
+		Cell: 9851136647
+		</pre>
+		</Center>
+<!-- <p>Help us improve your experience by taking our short survey.</center></p>
+
+</div>
+<div id="modal-footer">
+
+<button id="close">Close</button>
+<!-- <button id="no">No Thanks</button>
+<button id="accept">Give Feedback</button> -->
+
+</div>
+</div>
+
+<script type="text/javascript">
+function showModalBox(){
+showModalBox= document.getElementById('modal-box');
+setTimeout(showModalBox,3000);
+};
+var button = document.getElementById('close');
+button.onclick = function() {var div = document.getElementById('modal-box');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+}
+
+var button = document.getElementById('no');
+button.onclick = function() {var div = document.getElementById('modal-box');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+		clearTimeout(timeout);
+    }
+}
+
+
+var survey = document.getElementById('accept');
+survey.onclick = function() { var div = document.getElementById('modal-content');
+div.innerHTML ="";
+div.innerHTML ='<object style="width:100%; height:100%;" data="https://www.surveymonkey.com/r/WGT3VV5" />';
+hideNoButton = document.getElementById("no"). style.visibility="hidden"; // hides the No Thanks button when the GiveFeedback button is pressed
+hideAcceptButton = document.getElementById("accept").style.visibility="hidden";// hides the GiveFeedback button when the GiveFeedback button is pressed
+div.style.overflow='hidden';
+clearTimeout(timeout);
+};
+var timeout = setTimeout("location.reload(true);",30000);//1 second = 1000ms
+  function resetTimeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout("location.reload(false);");
+	};
+
+</script>
+	</body>
+</html>

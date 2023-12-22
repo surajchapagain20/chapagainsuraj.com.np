@@ -1,0 +1,29 @@
+<script language=JavaScript> 
+	function validateForm() {
+	var y = document.forms["contactform"]["first_name"].value;
+    if (y == null || y == "") {
+        alert("YOUR FIRST NAME PLEASE.");
+        return false;
+    }
+	var z = document.forms["contactform"]["last_name"].value;
+    if (z == null || z == "") {
+        alert("YOUR LAST NAME PLEASE.");
+        return false;
+    }
+	var t = document.forms["contactform"]["telephone"].value;
+    if (t == null || t == "") {
+        alert("YOUR TELEPHONE NUMBER PLEASE.");
+        return false;
+    }	
+	var x = document.forms["contactform"]["email"].value;
+    if (x == null || x == "") {
+        alert("YOUR EMAIL ADDRESS PLEASE.");
+        return false;
+    }
+	var m = document.forms["contactform"]["comments"].value;
+    if (m == null || m == "") {
+        alert("PLEASE FILL ON THE COMMENT BOX.");
+        return false;
+    }	
+}
+</script>
